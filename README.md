@@ -1,4 +1,4 @@
-# Trip Copilot 🧭
+# Trip Copilot
 
 An AI travel-data concierge for eSIM travelers. Tell it
 your trip — destinations, length, and what you do online — and it:
