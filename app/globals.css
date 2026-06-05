@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink-950: #060b14;
+  --color-ink-900: #0a121f;
+  --color-ink-850: #0e1828;
+  --color-ink-800: #122036;
+  --color-ink-700: #1b2c47;
+  --color-ink-600: #294062;
+
+  --color-mint-300: #6ff0c8;
+  --color-mint-400: #2fe0a8;
+  --color-mint-500: #14c99a;
+  --color-cyan-400: #3bd5e8;
+  --color-cyan-500: #1eb8d6;
+
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", sans-serif;
+}
+
+html,
+body {
+  background-color: var(--color-ink-950);
+  color: #e7eef7;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-image:
+    radial-gradient(60rem 60rem at 85% -10%, rgba(47, 224, 168, 0.14), transparent 60%),
+    radial-gradient(50rem 50rem at -10% 10%, rgba(59, 213, 232, 0.12), transparent 55%);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Glassy card surface */
+.card {
+  background: linear-gradient(
+    180deg,
+    rgba(18, 32, 54, 0.82),
+    rgba(10, 18, 31, 0.82)
+  );
+  border: 1px solid rgba(96, 165, 250, 0.1);
+  border-radius: 1.1rem;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.04) inset,
+    0 24px 48px -24px rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+}
+
+.accent-gradient {
+  background-image: linear-gradient(
+    100deg,
+    var(--color-mint-400),
+    var(--color-cyan-400)
+  );
+}
+
+.accent-text {
+  background-image: linear-gradient(
+    100deg,
+    var(--color-mint-300),
+    var(--color-cyan-400)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Custom scrollbar for the chat panel */
+.scroll-soft {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(96, 165, 250, 0.25) transparent;
+}
+.scroll-soft::-webkit-scrollbar {
+  width: 8px;
+}
+.scroll-soft::-webkit-scrollbar-thumb {
+  background-color: rgba(96, 165, 250, 0.25);
+  border-radius: 999px;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 0.3; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(-2px); }
+}
+.typing-dot {
+  animation: pulse-dot 1s infinite;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-up {
+  animation: fade-up 0.35s ease both;
+}
